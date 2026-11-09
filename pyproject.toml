@@ -1,0 +1,13 @@
+[project]
+name = "cool-app-msds"
+version = "0.1.0"
+description = "Interactive marimo app demonstrating overfitting in a live lecture"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "marimo",
+    "matplotlib",
+    "numpy",
+]
+
+[tool.uv]
+package = false

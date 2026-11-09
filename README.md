@@ -4,6 +4,24 @@ A starting point for research with AI agents, with you in control. Clarify your 
 
 The template works with different datasets, programming languages, and research methods.
 
+## Project environment and running
+
+The project uses Python 3.12 (`requires-python` in `pyproject.toml`) with marimo, NumPy and matplotlib. Exact versions are in `uv.lock`: marimo 0.25.2, NumPy 2.5.4 and matplotlib 3.11.2. The locked NumPy needs Python 3.12 or later, so the macOS system Python (3.9.6) cannot be used.
+
+Commands run on the researcher's own computer (set up on macOS 27.0.1, Apple Silicon), from the project root. Software comes from PyPI and uv's standard Python distribution. To create the environment with [uv](https://docs.astral.sh/uv/):
+
+```bash
+uv sync --locked
+```
+
+To confirm which Python is in use:
+
+```bash
+uv run --locked python -c "import sys; print(sys.executable, sys.version)"
+```
+
+The environment is kept in `.venv/`, which is not tracked by Git. Inside a sandboxed agent session, where uv's shared folders are blocked, first set `UV_CACHE_DIR="$TMPDIR/uv-cache"` and `UV_PYTHON_INSTALL_DIR="$PWD/.venv-python"`; `.venv-python/` is also untracked.
+
 ## Template structure
 
 | Location | What goes here |
